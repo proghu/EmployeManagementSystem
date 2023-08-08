@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-sm navbar-da" style="background-color: black">
+    <div class="container-fluid">
+        <button onclick="history.back()" class="btn btn-primary navbar-btn" style="width: 80;height: 35;">Go Back</button>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <div class="col-md-6 offset-md-3">
+                <h3>Update Qualification</h3>
+                <form (ngSubmit)="onSubmit()" style="background-color:#E6E6FA" #updateQualification="ngForm">
+                    <div class="form-group">
+                        <label>Employee ID</label>
+
+                            <input type="number" class="form-control" id="empId" [(ngModel)]="qualifications.employee.empId" name="empId"
+                            required #empId="ngModel" [class.is-invalid]="empId.invalid && empId.touched" />
+                            <small class="text-danger" [class.d-none]="empId.valid || empId.untouched">Required field</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Position</label>
+                        <input type="text" class="form-control" id="position" [(ngModel)]="qualifications.position" name="position"
+                        required #position="ngModel" [class.is-invalid]="position.invalid && position.touched" />
+                        <small class="text-danger" [class.d-none]="position.valid || position.untouched">Required field</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Requirements</label>
+                        <input type="text" class="form-control" id="requirements" [(ngModel)]="qualifications.requirements" name="requirements"
+                        required #requirements="ngModel" [class.is-invalid]="requirements.invalid && requirements.touched" />
+                        <small class="text-danger" [class.d-none]="requirements.valid || requirements.untouched">Required field</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>DateIn</label>
+                        <input type="date" class="form-control" id="dateIn" [(ngModel)]="qualifications.dateIn" name="dateIn"
+                            required #dateIn="ngModel" [class.is-invalid]="dateIn.invalid && dateIn.touched" />
+                        <small class="text-danger" [class.d-none]="dateIn.valid || dateIn.untouched">Required field</small>
+                    </div>
+                    
+
+                    <button [disabled]="updateQualification.form.invalid" class="btn btn-success" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

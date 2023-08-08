@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <button onclick="history.back()" class="btn btn-primary navbar-btn">Go Back</button>
+    </div>
+  </nav>
+
+<div class="container">
+    <h2>Forgot User</h2>
+    <form>
+      <div class="form-group">
+        <label for="mobilenumber">Registered Mobile Number:</label>
+        <input type="text" class="form-control" id="mobilenumber" name="mobilenumber" [(ngModel)]="mobilenumber" required placeholder="Enter your registered mobile number">
+      </div>
+      <button type="button" class="btn btn-primary" (click)="FindMobile(mobilenumber)">Submit</button>
+    </form>
+</div>
+
+
+  

@@ -1,0 +1,33 @@
+
+.footer {
+    background-color: #333;
+  }
+
+  .footer h3 {
+    margin-top: 10px;
+    color: #fff;
+    font-size: 16px;
+    font-style: italic;
+  }
+  
+  .footer p {
+    margin: 0;
+    color: #fff;
+    font-style: italic;
+  }
+
+  .footer ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer ul li a:hover {
+    text-decoration: underline;
+  }
+
+  .footer .col-md-12 p {
+    margin: 0;
+    font-size: 14px;
+  }
+  
+  

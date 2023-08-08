@@ -1,0 +1,71 @@
+.container-fluid {
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  .navbar-btn {
+    margin-top: 20px;
+    padding: 8px 10px;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+  }
+  
+  .about-container h1 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+  }
+  
+  .about-container p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+  }
+  
+  .about-container ul {
+    padding-left: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .about-container li {
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+  }
+  
+  /* Simple Fade-in Animation */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    25% {
+      opacity: 0.25;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    75% {
+      opacity: 0.75;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  

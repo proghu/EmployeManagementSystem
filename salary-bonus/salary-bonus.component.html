@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <button onclick="history.back()" class="btn btn-primary navbar-btn">Go Back</button>
+    </div>
+  </nav>
+
+  <form class="search-form">
+    <input class="form-control mr-sm-2" name="search" type="number" placeholder="Search job_ID" [(ngModel)]="SalaryBonusByjobId" />
+    <button type="button" class="btn btn-info" (click)="searchEmployee()">Find Employee</button>
+  </form>
+  
+<h2 style="text-align:center">SalaryBonus List</h2>
+
+<div class="container-fluid">
+    <div class="card-body">
+        <table class = "table table-striped">
+    <thead>
+        <tr>
+           <th>Salary_ID</th>
+            <th>Job_ID</th>
+            <th>Job_Departments</th>
+            <th>Job_Name</th>
+            <th>Amount</th>
+            <th>Annual_Expense</th>
+            <th>Bonus</th>
+            <th>Update</th>
+            <th>Delete</th>
+           
+ </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let salarybonus of ListSalaryBonus" >
+            
+           <td> {{ salarybonus.salaryId}} </td>
+            <td> {{ salarybonus.jobId}} </td>
+            <td> {{ salarybonus.jobDepartments}} </td>
+            <td> {{ salarybonus.jobName}} </td>
+            <td> {{ salarybonus.amount}} </td>
+            <td> {{ salarybonus.annualExpense}} </td>
+            <td> {{ salarybonus.bonus}} </td>
+            <td> <button type="button" class="btn btn-info" (click)="updateSalaryBonus(salarybonus.salaryId)">Update</button></td>
+            <td> <button type="button" class="btn btn-danger"(click)="deleteSalaryBonus(salarybonus.salaryId)">Delete</button></td>
+        </tr>
+    </tbody>
+</table>
+    </div></div>

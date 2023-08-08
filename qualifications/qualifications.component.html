@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <button onclick="history.back()" class="btn btn-primary navbar-btn">Go Back</button>
+    </div>
+  </nav>
+  
+  <form class="search-form">
+    <input class="form-control mr-sm-2" name="search" type="number" placeholder="Search empID" [(ngModel)]="qualificationsByempId" />
+    <button type="button" class="btn btn-info" (click)="searchEmployee()">Find Employee</button>
+  </form>
+ 
+
+<h2 style="text-align:center">Qualifications List</h2>
+
+<div class="container-fluid">
+    <div class="card-body">
+        <table class = "table table-striped">
+    <thead>
+        <tr>
+           <th>Qualification_ID</th>
+            <th>Employee_ID</th>
+            <th>First_Name</th>
+            <th>Last_Name</th>
+            <th>position</th>
+            <th>requirements</th>
+            <th>dateIn</th>
+            <th>Update</th>
+            <th>Delete</th>
+           
+ </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let qualification of ListQualifications" >
+            
+           <td> {{ qualification.qualificationId}} </td>
+            <td> {{ qualification.empId}} </td>
+            <td> {{ qualification.firstName}} </td>
+            <td> {{ qualification.lastName}} </td>
+            <td> {{ qualification.position}} </td>
+            <td> {{ qualification.requirements}} </td>
+            <td> {{ qualification.dateIn}} </td>
+            <td> <button type="button" class="btn btn-info" (click)="updateQualification(qualification.qualificationId)">Update</button></td>
+            <td> <button type="button" class="btn btn-danger"(click)="deleteQualifications(qualification.qualificationId)">Delete</button></td>
+        </tr>
+    </tbody>
+</table>
+    </div></div>

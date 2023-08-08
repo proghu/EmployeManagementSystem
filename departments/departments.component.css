@@ -1,0 +1,63 @@
+
+.nav-item button {
+    border: none;
+    background: none;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 10px 20px;
+  }
+  .nav-item button:hover {
+    color: #ccc;
+  }
+  
+  .bi-person {
+    margin-right: 10px;
+  }
+
+  /*search input and find button */
+
+  .search-form {
+    display: flex;
+    align-items: center;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .search-form input {
+    flex: 1;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+  }
+  
+  .search-form button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .search-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Add a simple animation to the search input */
+  .search-form input:focus {
+    box-shadow: 0 0 5px #007bff;
+  }
+  
+  /* Add a transition to the search form for a smooth appearance */
+  .search-form {
+    transition: all 0.3s ease;
+  }
+  

@@ -1,0 +1,64 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <button onclick="history.back()" class="btn btn-primary navbar-btn">Go Back</button>
+    </div>
+  </nav>
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <div class="col-md-6 offset-md-3">
+                <h3>Update Employee</h3>
+                <form (ngSubmit)="onSubmit()" style="background-color:#E6E6FA" #updateEmployee="ngForm">
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" class="form-control" id="firstName" [(ngModel)]="employees.firstName" name="firstName"
+                            required #firstName="ngModel" [class.is-invalid]="firstName.invalid && firstName.touched" />
+                        <small class="text-danger" [class.d-none]="firstName.valid || firstName.untouched">Required field</small>
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" class="form-control" id="lastName" [(ngModel)]="employees.lastName" name="lastName"
+                            required #lastName="ngModel" [class.is-invalid]="lastName.invalid && lastName.touched" />
+                        <small class="text-danger" [class.d-none]="lastName.valid || lastName.untouched">Required field</small>
+                    </div>
+                    <div class="form-group">
+                        <label>Gender</label>
+                        <input type="text" class="form-control" id="gender" [(ngModel)]="employees.gender" name="gender"
+                            required #gender="ngModel" [class.is-invalid]="gender.invalid && gender.touched" />
+                        <small class="text-danger" [class.d-none]="gender.valid || gender.untouched">Required field</small>
+                    </div>
+                    <div class="form-group">
+                        <label>Age</label>
+                        <input type="text" class="form-control" id="age" [(ngModel)]="employees.age" name="age" 
+                        required #age="ngModel" [class.is-invalid]="age.invalid && age.touched" />
+                        <small class="text-danger" [class.d-none]="age.valid || age.untouched">Required field</small>
+                    </div>
+                    <div class="form-group">
+                        <label>Contact Address</label>
+                        <textarea class="form-control" id="contactAddress" [(ngModel)]="employees.contactAddress" name="contactAddress" required
+                            #contactAddress="ngModel" [class.is-invalid]="contactAddress.invalid && contactAddress.touched"></textarea>
+                        <small class="text-danger" [class.d-none]="contactAddress.valid || contactAddress.untouched">Required field</small>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="text" class="form-control" id="employeeEmail" [(ngModel)]="employees.employeeEmail" name="employeeEmail" 
+                        required #employeeEmail="ngModel" [class.is-invalid]="employeeEmail.invalid && employeeEmail.touched" />
+                        <small class="text-danger" [class.d-none]="employeeEmail.valid || employeeEmail.untouched">Required field</small>
+                    </div>
+                    <div class="form-group">
+                        <label>Employee Password</label>
+                        <input type="password" class="form-control" id="employeePassword" [(ngModel)]="employees.employeePassword"
+                            name="employeePassword" required #employeePassword="ngModel"
+                            [class.is-invalid]="employeePassword.invalid && employeePassword.touched" />
+                        <small class="text-danger" [class.d-none]="employeePassword.valid || employeePassword.untouched">Required field</small>
+                    </div>
+                   
+                    <button [disabled]="updateEmployee.form.invalid" class="btn btn-success" type="submit">Submit</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

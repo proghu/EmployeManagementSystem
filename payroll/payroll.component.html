@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <button onclick="history.back()" class="btn btn-primary navbar-btn">Go Back</button>
+    </div>
+  </nav>
+
+  <form class="search-form">
+    <input class="form-control mr-sm-2" name="search" type="number" placeholder="Search empID" [(ngModel)]="PayrollByempId" />
+    <button type="button" class="btn btn-info" (click)="searchEmployee()">Find Employee</button>
+  </form>
+  
+<h2 style="text-align:center">Payrolls List</h2>
+
+<div class="container-fluid">
+    <div class="card-body">
+      <div class="table-responsive" > <!-- Wrap the table in a div with "table-responsive" class -->
+        <table class = "table table-striped">
+
+    <thead>
+        <tr>
+           <th>Payroll_ID</th>
+            <th>Emp_ID</th>
+            <th>First_Name</th>
+            <th>Last_Name</th>
+            <th>Job_ID</th>
+            <th>Salary_ID</th>
+            <th>Leave_ID</th>
+            <th>Date</th>
+            <th>Report</th>
+            <th>Total_Amount</th>
+            <th>Update</th>
+            <th>Delete</th>
+            <th>Detailed_Report</th>
+          
+           
+ </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let payroll of ListPayroll" >
+            
+           <td> {{ payroll.payrollId}} </td>
+            <td> {{ payroll.empId}} </td>
+            <td> {{ payroll.firstName}} </td>
+            <td> {{ payroll.lastName}} </td>
+            <td> {{ payroll.jobId}} </td>
+            <td> {{ payroll.salaryId}}</td>
+            <td> {{ payroll.leave_ID}} </td>
+            <td> {{ payroll.date}} </td>
+            <td> {{ payroll.report}} </td>
+            <td> {{ payroll.totalAmount}} </td>
+            <td> <button type="button" class="btn btn-info" (click)="updatePayroll(payroll.payrollId)">Update</button></td>
+            <td> <button type="button" class="btn btn-danger"(click)="deletePayroll(payroll.payrollId)">Delete</button></td>
+            <td>
+              <button type="button" class="btn btn-info" (click)="showDetailedReport(payroll.payrollId)">View</button>
+            </td>
+            
+           
+        </tr>
+    </tbody>
+</table>
+    </div></div></div>

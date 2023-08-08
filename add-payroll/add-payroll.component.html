@@ -1,0 +1,73 @@
+<nav class="navbar navbar-expand-sm navbar-da" style="background-color: black">
+    <div class="container-fluid">
+        <button onclick="history.back()" class="btn btn-primary navbar-btn" style="width: 80;height: 35;">Go Back</button>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <div class="col-md-6 offset-md-3">
+                <h3>Add Payroll</h3>
+                <form (ngSubmit)="onSubmit()" style="background-color:#E6E6FA" #addPayroll="ngForm">
+                    <div class="form-group">
+                        <label>Emp ID</label>
+
+                            <input type="number" class="form-control" id="empId" [(ngModel)]="payroll.employee.empId" name="empId"
+                            required #empId="ngModel" [class.is-invalid]="empId.invalid && empId.touched" />
+                            <small class="text-danger" [class.d-none]="empId.valid || empId.untouched">Required field</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Job ID</label>
+
+                            <input type="number" class="form-control" id="jobId" [(ngModel)]="payroll.jobDepartment.jobId" name="jobId"
+                            required #jobId="ngModel" [class.is-invalid]="jobId.invalid && jobId.touched" />
+                            <small class="text-danger" [class.d-none]="jobId.valid || jobId.untouched">Required field</small>
+                    </div>
+
+                    
+                    <div class="form-group">
+                        <label>Salary ID</label>
+
+                            <input type="number" class="form-control" id="salaryId" [(ngModel)]="payroll.salaryBonusEntity.salaryId" name="salaryId"
+                            required #salaryId="ngModel" [class.is-invalid]="salaryId.invalid && salaryId.touched" />
+                            <small class="text-danger" [class.d-none]="salaryId.valid || salaryId.untouched">Required field</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Leave ID</label>
+
+                            <input type="number" class="form-control" id="leave_ID" [(ngModel)]="payroll.leaveentity.leave_ID" name="leave_ID"
+                            required #leave_ID="ngModel" [class.is-invalid]="leave_ID.invalid && leave_ID.touched" />
+                            <small class="text-danger" [class.d-none]="leave_ID.valid || leave_ID.untouched">Required field</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Date</label>
+                        <input type="date" class="form-control" id="date" [(ngModel)]="payroll.date" name="date"
+                            required #date="ngModel" [class.is-invalid]="date.invalid && date.touched" />
+                        <small class="text-danger" [class.d-none]="date.valid || date.untouched">Required field</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Report</label>
+                        <input type="text" class="form-control" id="report" [(ngModel)]="payroll.report" name="report"
+                        required #report="ngModel" [class.is-invalid]="report.invalid && report.touched" />
+                        <small class="text-danger" [class.d-none]="report.valid || report.untouched">Required field</small>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Total Amount</label>
+                        <input type="number" class="form-control" id="totalAmount" [(ngModel)]="payroll.totalAmount" name="totalAmount"
+                        required #totalAmount="ngModel" [class.is-invalid]="totalAmount.invalid && totalAmount.touched" />
+                        <small class="text-danger" [class.d-none]="totalAmount.valid || totalAmount.untouched">Required field</small>
+                    </div>
+
+                    <button [disabled]="addPayroll.form.invalid" class="btn btn-success" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

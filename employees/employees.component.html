@@ -1,0 +1,77 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <button onclick="history.back()" class="btn btn-primary navbar-btn">Go Back</button>
+    </div>
+  </nav>
+
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <button class="nav-link" (click)="addQualification()"><i class="bi bi-person"></i>Add Qualification</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" (click)="listQualifications()"><i class="bi bi-person"></i> Qualifications List</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" (click)="AddLeave()"><i class="bi bi-person"></i>Add Leave</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" (click)="listLeaves()"><i class="bi bi-person"></i> Leaves List</button>
+      </li>
+    </ul>
+  </nav>
+
+  <form class="search-form">
+    <input class="form-control mr-sm-2" name="search" type="text" placeholder="Search First_Name" [(ngModel)]="firstName" />
+    <button type="button" class="btn btn-info" (click)="searchEmployee()">Find Employee</button>
+  </form>
+  
+  
+<h2 style="text-align: center;">Employees List</h2>
+
+<div class="container-fluid">
+    <div class="card-body">
+        <table class = "table table-striped">
+    <thead>
+        <tr>
+            <th>Emp_ID</th>
+            <th>First_Name</th>
+            <th>Last_Name</th>
+            <th>Gender</th>
+            <th>Age</th>
+            <th>Contact_Address</th>
+            <th>Email</th>
+            <th>Employee_Password</th>
+            <th>Update</th>
+            <th>Delete</th>
+           
+           
+ </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let employees of EmployeesList" >
+            
+            <td> {{ employees.empId}} </td>
+            <td> {{ employees.firstName}} </td>
+            <td> {{ employees.lastName}} </td>
+            <td> {{ employees.gender}} </td>
+            <td> {{ employees.age}} </td>
+            <td> {{ employees.contactAddress}} </td>
+            <td> {{ employees.employeeEmail}} </td>
+            <td> {{ employees.employeePassword}} </td>
+            <td>
+                <button class="btn btn-info" (click)="updateEmployee(employees.empId)">Update</button>
+            </td>
+            <td>
+                <button class="btn btn-danger" (click)="deleteEmployee(employees.empId)">Delete</button>
+          </td>
+
+        
+
+
+        </tr>
+    </tbody>
+</table>
+    </div></div>
+

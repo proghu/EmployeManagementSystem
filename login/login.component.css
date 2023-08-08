@@ -1,0 +1,173 @@
+.header {
+  display: flex;
+  align-items: center;
+  background-color: #f1f1f1;
+  text-align: center;
+  padding: 10px;
+}
+
+.circle-image {
+  width: 80px; 
+  height: 80px; 
+  overflow: hidden;
+  border-radius: 50%;
+  margin-left: 450px;
+  margin-right: 10px;
+  position: relative;
+}
+.circle-image img {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  position: absolute;
+  left: -100px; /* Move the image outside the left edge initially */
+  animation: slideAndBack 2s linear forwards;
+}
+
+@keyframes slideAndBack {
+  0% {
+    left: -90px; /* Move the image outside the left edge */
+  }
+  50% {
+    left: 1px; /* Bring the image back to its original position */
+  }
+  100% {
+    left: 1px; 
+  }
+}
+
+
+
+.header h1 {
+  font-size: 35px;
+  color: #333;
+}
+
+
+
+.image-container {
+  position: relative;
+  max-width: 50%;
+  animation: blink-image 2s;
+}
+
+.image-container img {
+  margin-top: 30px;
+  width: 100%;
+  height: auto;
+  display: block;
+  position: absolute;
+}
+
+@keyframes blink-image {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0;
+    transform: scale(1); /* Increase the scale to make it disappear */
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.container {
+  max-width: 600px;
+  margin: 6px 40px 30px 0;
+  padding:10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #1ca9c9;
+  background-size: cover;
+  background-position: right;
+  float: right;
+  animation: blink 2s;
+}
+
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
+h2 {
+  text-align: center;
+  margin-bottom: 3px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+  color: #333;
+}
+
+input.form-control {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  opacity: 0.8;
+}
+
+input.form-control:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px #007bff;
+}
+
+.alert-danger {
+  margin-bottom: 15px;
+}
+
+.btn-primary {
+  width: 100%;
+  background-color: #007bff;
+  border: none;
+}
+
+.btn-secondary {
+  width: 100%;
+  margin-top: 10px;
+  background-color: #6c757d;
+  border: none;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 8px;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+  opacity: 0.8;
+}
+
+
+/* Style the footer */
+app-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0px;
+  text-align: center;
+}

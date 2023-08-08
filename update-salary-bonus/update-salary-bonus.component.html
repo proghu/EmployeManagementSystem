@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-sm navbar-da" style="background-color: black">
+    <div class="container-fluid">
+        <button onclick="history.back()" class="btn btn-primary navbar-btn" style="width: 80;height: 35;">Go Back</button>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <div class="col-md-6 offset-md-3">
+                <h3>Update SalaryBonus</h3>
+                <form (ngSubmit)="onSubmit()" style="background-color:#E6E6FA" #updateSalaryBonus="ngForm">
+                    <div class="form-group">
+                        <label>Job ID</label>
+
+                            <input type="number" class="form-control" id="jobId" [(ngModel)]="salarybonus.jobDepartment.jobId" name="jobId"
+                            required #jobId="ngModel" [class.is-invalid]="jobId.invalid && jobId.touched" />
+                            <small class="text-danger" [class.d-none]="jobId.valid || jobId.untouched">Required field</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Amount</label>
+                        <input type="number" class="form-control" id="amount" [(ngModel)]="salarybonus.amount" name="amount"
+                        required #amount="ngModel" [class.is-invalid]="amount.invalid && amount.touched" />
+                        <small class="text-danger" [class.d-none]="amount.valid || amount.untouched">Required field</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Annual Expense</label>
+                        <input type="text" class="form-control" id="annualExpense" [(ngModel)]="salarybonus.annualExpense" name="annualExpense"
+                        required #annualExpense="ngModel" [class.is-invalid]="annualExpense.invalid && annualExpense.touched" />
+                        <small class="text-danger" [class.d-none]="annualExpense.valid || annualExpense.untouched">Required field</small>
+                    </div>
+                    <div class="form-group">
+                        <label>Bonus</label>
+                        <input type="text" class="form-control" id="bonus" [(ngModel)]="salarybonus.bonus" name="bonus"
+                        required #bonus="ngModel" [class.is-invalid]="bonus.invalid && bonus.touched" />
+                        <small class="text-danger" [class.d-none]="bonus.valid || bonus.untouched">Required field</small>
+                    </div>
+
+                   
+                    
+
+                    <button [disabled]="updateSalaryBonus.form.invalid" class="btn btn-success" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

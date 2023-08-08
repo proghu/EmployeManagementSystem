@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <button onclick="history.back()" class="btn btn-primary navbar-btn">Go Back</button>
+    </div>
+  </nav>
+
+  <form class="search-form">
+    <input class="form-control mr-sm-2" name="search" type="number" placeholder="Search empID" [(ngModel)]="leavesByempId" />
+    <button type="button" class="btn btn-info" (click)="searchEmployee()">Find Employee</button>
+  </form>
+
+<h2 style="text-align:center">Leaves List</h2>
+
+<div class="container-fluid">
+    <div class="card-body">
+        <table class = "table table-striped">
+    <thead>
+        <tr>
+           <th>leave-ID</th>
+            <th>Employee-ID</th>
+            <th>First_Name</th>
+            <th>Last_Name</th>
+            <th>Date</th>
+            <th>Reason</th>
+            <th>Update</th>
+            <th>Delete</th>
+           
+ </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let leave of ListLeaves" >
+            
+           <td> {{ leave.leave_ID}} </td>
+            <td> {{ leave.empId}} </td>
+            <td> {{ leave.firstName}} </td>
+            <td> {{ leave.lastName}} </td>
+            <td> {{ leave.date}} </td>
+            <td> {{ leave.reason}} </td>
+            <td> <button type="button" class="btn btn-info" (click)="updateLeave(leave.leave_ID)">Update</button></td>
+            <td> <button type="button" class="btn btn-danger"(click)="deleteLeave(leave.leave_ID)">Delete</button></td>
+        </tr>
+    </tbody>
+</table>
+    </div></div>

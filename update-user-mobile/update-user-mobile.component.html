@@ -1,0 +1,81 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <button onclick="history.back()" class="btn btn-primary navbar-btn">Go Back</button>
+    </div>
+  </nav>
+  
+  <div class="container">
+    <div class="card">
+      <div class="card-body">
+        <div class="col-md-6 offset-md-3">
+          <h3>Update User</h3>
+          <form (ngSubmit)="onSubmit()" style="background-color:#E6E6FA" #updateUser="ngForm">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" class="form-control" id="firstName" [(ngModel)]="users.firstname" name="firstname" required
+                #firstname="ngModel" [class.is-invalid]="firstname.invalid && firstname.touched" />
+              <small class="text-danger" [class.d-none]="firstname.valid || firstname.untouched">Required field</small>
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" class="form-control" id="lastName" [(ngModel)]="users.lastname" name="lastname" required
+                #lastname="ngModel" [class.is-invalid]="lastname.invalid && lastname.touched" />
+              <small class="text-danger" [class.d-none]="lastname.valid || lastname.untouched">Required field</small>
+            </div>
+            <div class="form-group">
+              <label>Username</label>
+              <input type="text" class="form-control" id="username" [(ngModel)]="users.username" name="username" required
+                #username="ngModel" [class.is-invalid]="username.invalid && username.touched" />
+              <small class="text-danger" [class.d-none]="username.valid || username.untouched">Required field</small>
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <input type="password" class="form-control" id="password" [(ngModel)]="users.password" name="password" required
+                #password="ngModel" [class.is-invalid]="password.invalid && password.touched" />
+              <small class="text-danger" [class.d-none]="password.valid || password.untouched">Required field</small>
+            </div>
+            <div class="form-group">
+              <label>Confirm Password</label>
+              <input type="password" class="form-control" id="confirmPassword" [(ngModel)]="users.confirmpassword"
+                name="confirmpassword" required #confirmpassword="ngModel"
+                [class.is-invalid]="confirmpassword.invalid && confirmpassword.touched" />
+              <small class="text-danger" [class.d-none]="confirmpassword.valid || confirmpassword.untouched">Required field</small>
+            </div>
+            <div class="form-group">
+              <label>Gender</label>
+              <input type="text" class="form-control" id="gender" [(ngModel)]="users.gender" name="gender" required
+                #gender="ngModel" [class.is-invalid]="gender.invalid && gender.touched" />
+              <small class="text-danger" [class.d-none]="gender.valid || gender.untouched">Required field</small>
+            </div>
+            <div class="form-group">
+              <label>Age</label>
+              <input type="text" class="form-control" id="age" [(ngModel)]="users.age" name="age" required #age="ngModel"
+                [class.is-invalid]="age.invalid && age.touched" />
+              <small class="text-danger" [class.d-none]="age.valid || age.untouched">Required field</small>
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" class="form-control" id="email" [(ngModel)]="users.email" name="email" required
+                #email="ngModel" [class.is-invalid]="email.invalid && email.touched" />
+              <small class="text-danger" [class.d-none]="email.valid || email.untouched">Required field</small>
+            </div>
+            <div class="form-group">
+              <label>Mobile Number</label>
+              <input type="text" class="form-control" id="mobilenumber" [(ngModel)]="users.mobilenumber"
+                name="mobilenumber" required #mobilenumber="ngModel"
+                [class.is-invalid]="mobilenumber.invalid && mobilenumber.touched" />
+              <small class="text-danger" [class.d-none]="mobilenumber.valid || mobilenumber.untouched">Required field</small>
+            </div>
+            <div class="form-group">
+              <label>Address</label>
+              <textarea class="form-control" id="address" [(ngModel)]="users.address" name="address" required
+                #address="ngModel" [class.is-invalid]="address.invalid && address.touched"></textarea>
+              <small class="text-danger" [class.d-none]="address.valid || address.untouched">Required field</small>
+            </div>
+            <button [disabled]="updateUser.form.invalid" class="btn btn-success" type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
